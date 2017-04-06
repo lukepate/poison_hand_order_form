@@ -1,0 +1,21 @@
+body {
+  font-family: Ablefont, Irish Grover;
+  text-align: center;
+  font-color: #7C2A30;
+  background-color: #F5F5F5 ;
+}
+
+#bg{
+  position: absolute;
+  opacity: .09;
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background background-attachment: fixed;
+  margin-top: -680px;
+  left: 0%;
+  z-index: -1;
+}
+
+

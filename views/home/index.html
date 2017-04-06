@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+ <script src="https://www.google.com/jsapi?key=AIzaSyAagP8OMcTFjv1Fiz08bfMmL0SirqzMx7E" type="text/javascript"></script>
+  <title></title>
+</head>
+  <body>
+    <nav>
+
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="sass.html">Sass</a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>Submit an Order</h1>
+
+<!-- {{#prices}}
+<div class="house">
+  <a href="/houses/{{ id }}">{{shirt_style}}</a>
+    <img src="{{img_url}}" alt="" class="house">
+</div>
+{{/prices}} -->
+
+
+
+      <form action='/' method='POST' class="col s6 offset-s1">
+        <div class="z-depth-5 #ffffff white">
+         <h4 class="card-panel teal lighten-2">Contact</h4>
+
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <span class="flow-text">
+              <input id="first_name" type="text" class="validate" name="contact_name">
+              <label for="first_name">Contact Name</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <span class="flow-text">
+              <input id="first_name" type="text" class="validate" name="contact_name">
+              <label for="first_name">Email</label>
+              </span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s3 offset-s2">
+              <input id="last_name" type="text" class="validate" name="phone">
+              <label for="last_name">Phone Number</label>
+            </div>
+           <div class="input-field col s2 ">
+              <input type="date" class="datepicker" name="due_date">
+              <label for="password"></label>
+            </div>
+          </div>
+
+
+          <div class="row">
+
+            <div class="input-field col s3 offset-s2">
+              <input id="street" type="text" class="validate" name="street">
+              <label for="last_name">street number</label>
+            </div>
+           <div class="input-field col s2 ">
+              <input id="city" type="text" class="validate" name="city">
+              <label for="city"></label>
+            </div>
+            <div class="row">
+              <div class="input-field col s2 ">
+                <input id="state" type="text" class="validate" name="state">
+
+              <label for="city"></label>
+            </div>
+            </div>
+          </div>
+
+        <h5 class="card-panel teal lighten-2">Order</h5>
+
+         <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <p>
+             <input name="style" type="radio" id="test1" value="T-shirt" />
+              <label for="test1">T-shirt </label>
+              <input name="style" type="radio" id="test2" value="Long Sleeve"/>
+              <label for="test2">Long Sleeve T-shirt </label>
+              <input name="style" type="radio" id="test3" value="Hoodie"/>
+              <label for="test3"> Hoodie </label>
+              <input name="style" type="radio" id="test4" value="Crew Neck" />
+              <label for="test4">Crew Neck </label>
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <span class="flow-text">
+                <input id="password" type="password" class="validate" name="shirt_name">
+                <label for="password">Shirt Name</label>
+              </span>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="input-field col s4 offset-s2">
+              <input id="password" type="password" class="validate" name="front_color">
+              <label for="password">Front Colors:</label>
+            </div>
+            <div class="input-field col s4">
+              <input id="password" type="password" class="validate" name="back_color">
+              <label for="password">Back Colors:</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate" name="app_color">
+              <label for="password">Apparel Color</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate" name="quanity">
+              <label for="password">Quanity</label>
+            </div>
+          </div>
+  <div class="row">
+  </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate" name="img_url">
+              <label for="password">Quanity</label>
+            </div>
+          </div>
+           <button id="submit_button" type="submit"> submit</button>
+ <br><br>
+        </div>
+      </form>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+
+  </div>
+<!--   <img src="images/dante.jpg" alt="Mountain View" id="bg"> -->
+
+  <script src="script/jquery.js"></script>
+  <script src="script/script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+  <!--       <div class="row">
+          <div class="col s12">
+          <span class="flow-text">
+          <form action='/' method='POST'>
+          Name: <input type="text" name="name"/><br>
+          IMG: <input type="text" name="img_url"/><br>
+          <button type="submit"> submit</button>
+           </form>
+           </span>
+           </div>
+        </div>
+ -->
+
+
+
+
+
+<!--
+<form action="/" method="post" enctype="text/plain">
+First Name:<br>
+<input type="text" name="first" value="Luke"><br>
+Last Name:<br>
+<input type="text" name="last" value="Pate"><br>
+E-mail:<br>
+<input type="text" name="email"><br>
+Due Date:<br>
+<input type="text" name="duedate"><br>
+Address:<br>
+<input type="text" name="add"><br>
+<!-- Comment:<br>
+<input type="text" name="comment" size="50"><br><br> -->
+<!-- <input type="submit" value="Send">
+<input type="reset" value="Reset">
+</form> -->
+
+
+
