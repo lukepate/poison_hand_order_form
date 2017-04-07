@@ -4,7 +4,6 @@ body {
   font-color: #7C2A30;
   background-color: #F5F5F5 ;
 }
-
 #bg{
   position: absolute;
   opacity: .09;
@@ -18,4 +17,16 @@ body {
   z-index: -1;
 }
 
+.dueDateLeft{
+  margin-left: 40px !important;
+}
+#hide {
+  display: none;
+}
+#hide2 {
+  display: none;
+}
 
+#hide3 {
+  display: none;
+}

@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS prices;
 DROP TABLE IF EXISTS client;
 DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS houses;
+DROP TABLE IF EXISTS users;
 
 
 
@@ -28,13 +29,20 @@ CREATE TABLE orders(
   contact_name varchar(50),
   phone varchar(250),
   due_date varchar(250),
+  ship varchar(250),
   address varchar(250),
-  shirt_name varchar(250),
-  front_color varchar(250),
-  back_color varchar(250),
   style varchar(250),
+  shirt_name varchar(250),
+  front_color INT,
+  back_color INT,
+  sleeve_color INT,
   app_color varchar(250),
-  quantity varchar(250),
+  quantity INT,
+  sm INT,
+  md INT,
+  lg INT,
+  xl INT,
+  twoxl INT,
   img_url varchar(250)
   );
 CREATE TABLE houses(
@@ -42,3 +50,10 @@ CREATE TABLE houses(
   name varchar(50),
   img_url varchar(250)
   );
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(255) UNIQUE,
+  password_digest VARCHAR(255)
+);
+
