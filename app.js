@@ -91,10 +91,6 @@ app.post("/", upload.single('img_url'), function(req, res){
 })
 
 app.put("/post/:id", function (req, res) {
-
-  // new_style = req.params.style
-  // console.log(id)
-  // console.log(req.params)
   console.log(req.body.style)
    db
    .none("UPDATE orders SET contact_name = $1, phone =$2, due_date = $3, ship =$4, address = $5, style = $6, shirt_name = $7, front_color = $8, back_color = $9, sleeve_color = $10, app_color = $11, quantity = $12, sm = $13, md = $14, lg =$15, xl = $16,  twoxl=$17, img_url=$18  WHERE id = $19", [req.body.contact_name, req.body.phone, req.body.due_date, req.body.ship, req.body.address, req.body.style, req.body.shirt_name, req.body.front_color, req.body.back_color, req.body.sleeve_color, req.body.app_color, req.body.quantity, req.body.sm, req.body.md, req.body.lg, req.body.xl, req.body.twoxl, req.body.img_url, req.params.id])
@@ -104,11 +100,7 @@ app.put("/post/:id", function (req, res) {
     })
  })
 app.delete("/post/:id", function (req, res) {
-  // let id = req.params.id
   id = req.params.id
-  // new_style = req.params.style
-  // console.log(id)
-  // console.log(req.params)
   console.log(req.body.style)
    db
    .none("DELETE FROM orders WHERE id = $1", [id])
