@@ -47,20 +47,30 @@ XL: {{xl}}<br>
 Img Url: {{img_url}}<br>
 <p class="total"> Total:</p>
 
-
 <form action='/post/{{id}}?_method=PUT' method='post'>
-<!--   update style
- --><!--   <input type="text" name="style"><br>
- -->  <!-- <select name="houses">
-   {{#orders}}
-    <option value="{{ style }}">{{ style }}</option>
-      <button type="submit"> submit</button>
-    {{/orders}}
-   </select> -->
-
-   <input type="text" name="style" value="style">
+    <input type="text" name="contact_name" value="contact">
+    <input type="text" name="phone" value="phone">
+    <input type="text" name="due_date" value="due_date">
+    <input type="text" name="ship" value="ship">
+    <input type="text" name="address" value="address">
+    <input type="text" name="style" value="style">
+    <input type="text" name="shirt_name" value="shirt_name">
+    <input type="text" name="front_color" value="front_color">
+    <input type="text" name="back_color" value="back_color">
+    <input type="text" name="sleeve_color" value="sleeve_color">
+    <input type="text" name="app_color" value="app_color">
+    <input type="text" name="quantity" value="quantity">
+    <input type="text" name="sm" value="sm">
+    <input type="text" name="md" value="md">
+    <input type="text" name="lg" value="lg">
+    <input type="text" name="xl" value="xl">
+    <input type="text" name="twoxl" value="">
+    <input type="text" name="img_url" value="img_url">
    <button type="submit"> submit</button>
 </form>
+
+
+
 
 <form action='/post/{{id}}?_method=DELETE' method='post'>
 
