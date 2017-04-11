@@ -3,6 +3,7 @@ console.log('working');
 GKey = "AIzaSyAagP8OMcTFjv1Fiz08bfMmL0SirqzMx7E"
 Gif= "dc6zaTOxFJmzC";
 var $submit = $('#submit_button');
+var $send = $('#send_button');
 var $input = $('#city_entered');
 var $getaddress = $('#getaddress');
 var $more = $('#more_button');
@@ -91,35 +92,23 @@ $more3.on('click', function(){
       loadMore3();
 })
 
-//  $('#imageContainer').click(function () {
-//      $.ajax({
-//         url:"http://api.openweathermap.org/data/2.5/weather?q=brooklyn&APPID=4fd80f2ec2c56827bb6d4f629a1d2090&units=imperial&type=accurate",
-//         method:"GET",
-//         success: function(data){
-//           let i = data.embed_url;
-//             console.log(i)
-//           console.log("this worked")
-//           $('#imageContainer').attr("src", i)
-//         }
-//         });
-// });
-
 
 // $('#imageContainer').click(function(){
 //     event.preventDefault();
-    var getWeatherFive = function(){
+    var getGif = function(){
     $.ajax({
-        url:"http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=thanks",
+        url:"http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=kung+fu",
         method:"GET",
         success: function(data){
                  // let i = data.data[0].images.fixed_height.url;
           let i = data.data.fixed_height_downsampled_url;
           console.log(i)
           console.log("this worked")
-            $('#imageContainer').attr("src", i)
+            $inhere.attr("src", i)
         }
         });
        }
-       getWeatherFive();
+       getGif();
     // })
+
 

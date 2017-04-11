@@ -7,6 +7,7 @@ const session = require('express-session');
 var multer  = require('multer')
 var upload = multer({ dest: 'public/uploads/' })
 var methodOverride = require('method-override')
+const nodemailer = require('nodemailer');
 
 const bcrypt = require('bcrypt');
 const salt = bcrypt.genSalt(10);
@@ -27,10 +28,14 @@ app.use(session({
 }))
 
 let db = pgp('postgres://Lukepate@localhost:5432/db');
-
 app.listen(3000, function(){
   console.log("server is listening")
 })
+
+
+app.get('/signup', function(req, res){
+  res.render('signup/index')
+});
 
 
 app.get('/', function(req, res){
@@ -65,12 +70,13 @@ app.post("/", upload.single('img_url'), function(req, res){
   xl = req.body.xl
   twoxl = req.body.twoxl
   img_url = req.body.img_url
+  email = req.session.user.email
   if(req.session.user){
     let data = {
       "logged_in": true,
       "email": req.session.user.email
     };
-       db.one("insert into orders(contact_name, phone, due_date, ship, address, style, shirt_name, front_color, back_color, sleeve_color, app_color, quantity, sm, md, lg, xl, twoxl, img_url) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18) returning id", [contact_name, phone, due_date, ship, address, style, shirt_name, front_color, back_color, sleeve_color, app_color, quantity, sm, md, lg, xl, twoxl, img_url])
+       db.one("insert into orders(contact_name, phone, due_date, ship, address, style, shirt_name, front_color, back_color, sleeve_color, app_color, quantity, sm, md, lg, xl, twoxl, img_url, email) values($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19) returning id", [contact_name, phone, due_date, ship, address, style, shirt_name, front_color, back_color, sleeve_color, app_color, quantity, sm, md, lg, xl, twoxl, img_url, email])
   .then(function(data){
     console.log("data below")
     console.log(data)
@@ -83,34 +89,45 @@ app.post("/", upload.single('img_url'), function(req, res){
         address:address.data,
         shirt_name:shirt_name.data,
         app_color:app_color.data,
-
       }
       res.redirect("/"+data.id)
    })
  }
 })
 
-app.put("/post/:id", function (req, res) {
-  console.log(req.body.style)
+app.get("/update/:id", function(req, res){
+   let id = req.params.id
    db
-   .none("UPDATE orders SET contact_name = $1, phone =$2, due_date = $3, ship =$4, address = $5, style = $6, shirt_name = $7, front_color = $8, back_color = $9, sleeve_color = $10, app_color = $11, quantity = $12, sm = $13, md = $14, lg =$15, xl = $16,  twoxl=$17, img_url=$18  WHERE id = $19", [req.body.contact_name, req.body.phone, req.body.due_date, req.body.ship, req.body.address, req.body.style, req.body.shirt_name, req.body.front_color, req.body.back_color, req.body.sleeve_color, req.body.app_color, req.body.quantity, req.body.sm, req.body.md, req.body.lg, req.body.xl, req.body.twoxl, req.body.img_url, req.params.id])
+    .any("SELECT * FROM users WHERE id = $1", id)
+    .then(function(data){
+      console.log(data)
+      let view_data = {
+        users:data
+      };
+      res.render("confirm/index", view_data);
+    })
+  });
+
+app.put("/users/update/:id", function (req, res) {
+  console.log(req.body.email)
+   db
+   .none("UPDATE users SET name = $1 WHERE id = $2", [req.body.name, req.params.id])
    .then(function() {
-      res.redirect("/"+req.params.id)
+      res.redirect("/update/"+req.params.id)
 
     })
  })
-app.delete("/post/:id", function (req, res) {
+
+app.delete("/users/delete/:id", function (req, res) {
   id = req.params.id
   console.log(req.body.style)
    db
-   .none("DELETE FROM orders WHERE id = $1", [id])
+   .none("DELETE FROM users WHERE id = $1", [id])
    .then(function() {
       res.redirect("/"+req.params.id)
 
     })
  })
-
-
 app.post('/login', function(req, res){
   let data = req.body;
   db
@@ -130,41 +147,25 @@ app.post('/login', function(req, res){
     });
 });
 
+
+
+
 app.post('/signup', function(req, res){
   let data = req.body;
   bcrypt
     .hash(data.password, 10, function(err, hash){
       db.none(
-        "INSERT INTO users (email, password_digest) VALUES ($1, $2)",
-        [data.email, hash]
+        "INSERT INTO users (email, name, password_digest) VALUES ($1, $2, $3)",
+        [data.email, data.name, hash]
       ).then(function(){
-        res.send('User created!');
+         res.redirect("/");
       })
     })
 });
 
-app.get('/signup', function(req, res){
-  res.render('signup/index')
-});
+
 
 app.get('/logout', function(req, res){
   req.session.user = false;
   res.redirect("/")
 });
-
-
-app.get("/:id", function(req, res){
-   let id = req.params.id
-   db
-    .any("SELECT * FROM orders WHERE id = $1", id)
-    .then(function(data){
-      console.log(data)
-      let view_data = {
-        orders:data
-      };
-      res.render("confirm/index", view_data);
-    })
-  });
-
-
-

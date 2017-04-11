@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
 <!doctype html>
 <html>
   <head>
@@ -12,139 +6,82 @@
   <script src="https://www.google.com/jsapi?key=AIzaSyAagP8OMcTFjv1Fiz08bfMmL0SirqzMx7E" type="text/javascript"></script>
 </head>
 
-  <body>
+  <body background="images/dante.jpg">
     {{#logged_in}}
     <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Logo</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-           <li><a href="sass.html">Sass</a></li>
-           <li><a href="badges.html">Components</a></li>
-           <li><a href="collapsible.html">JavaScript</a></li>
-           <li><a href="/logout">Logout!</a></li>
-          </ul>
-      </div>
-    </nav>
-
-
+    <div class="nav-wrapper">
+      <a href="#" id="left"><img src="images/logo.png" class="logo" alt=""></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+           <li><a href="/update/1">Update</a></li>
+        <li><a href="collapsible.html">Contact</a></li>
+        <li><a href="/logout">Logout!</a></li>
+      </ul>
+    </div>
+  </nav>
+<br>
+<br>
+<br>
  <div class="container">
-      <h1>Submit an Order</h1>
-<!------------------------------ FORM 1  -------------------------------->
-      <form id="form" enctype="multipart/form-data" action='/' method='POST' class="col s6 offset-s1">
         <div class="z-depth-5 #ffffff white">
-         <h4 class="card-panel teal lighten-2">Contact</h4>
-         <br>
-         <!-- CONTACT_NAME 1 -->
-          <div class="row">
-            <div class="input-field col s4 offset-s4">
-              <span class="flow-text">
-              <input id="first_name" type="text" class="validate" name="contact_name">
-              <label class="active" for="first_name">Contact Name</label>
-              </span>
-            </div>
-          </div>
+         <h4 class="card-panel #ef5350 red lighten-1">Submit an Order</h4>
 
-          <!-- EMAIL 1 -->
-          <div class="row">
-            <div class="input-field col s4 offset-s4">
-              <span class="flow-text">
-              <input id="first_name" type="email" class="validate" name="email">
-              <label class="active" for="first_name">Email</label>
-              </span>
-            </div>
-          </div>
+ <form action="https://formspree.io/lukewpate@gmail.com" method="POST">
+  <!-- CONTACT_NAME 1 -->
+    <div class="row">
+      <div class="input-field col s3 offset-s1">
+        <span class="flow-text">
+          <input id="first_name" type="text" name="contact_name" value="Name: name" onfocus="if (this.value=='name') this.value='';">
+        </span>
+      </div>
+  <!-- SHIRT STYLE 1 -->
+      <div class="input-field col s5 offset-s1">
+        <p>
+          <input name="style" type="radio" id="test1" value="T-shirt" />
+          <label for="test1">T-shirt </label>
+          <input name="style" type="radio" id="test2" value="Long Sleeve"/>
+          <label for="test2">Long Sleeve</label>
+          <input name="style" type="radio" id="test3" value="Hoodie"/>
+          <label for="test3"> Hoodie </label>
+          <input name="style" type="radio" id="test4" value="Crew Neck" />
+          <label for="test4">Crew Neck </label>
+        </p>
+      </div>
+    </div>
+  <!-- EMAIL 1 -->
+  <div class="row">
+    <div class="input-field col s3 offset-s1">
+      <span class="flow-text">
 
-          <!-- PHONE 1 -->
-          <div class="row">
-            <div class="input-field col s2 offset-s4">
-              <input id="last_name" type="tel" class="validate" name="phone">
-              <label class="active" for="last_name">Phone Number</label>
-            </div>
-
-          <!-- DUE DATE 1 -->
-           <div class="input-field col s2 ">
-              <input type="date" class="datepicker" name="due_date">
-              <label class="active" for="last_name"><span class="dueDateLeft">Due Date</span></label>
-            </div>
-          </div>
-
-          <!-- SHIPPING 1 -->
-          <div class="row">
-            <div class="input-field col s5 offset-s5">
-              <div class="switch">
-                <label>
-                Pick-Up
-                  <input name="ship" value="Yes" type="checkbox">
-                  <span class="lever"></span>
-                Ship
-                </label>
-              </div>
-            </div>
-          </div>
-          <br>
-          <br>
-
-          <!-- ADDRESS 1 -->
-          <div class="row">
-            <div id="getaddress" onclick="getLocation() ">Use Current Address</div>
-              <div class="input-field col s4 offset-s4">
-                <input id="street" type="text" class="validate" name="address">
-                <label for="last_name"><p id="show"></p></label>
-            </div>
-          </div>
-
-
-        <h5 class="card-panel teal lighten-2">Order</h5>
-
-        <!-- SHIRT STYLE 1 -->
-        <div class="row">
-          <div class="input-field col s5 offset-s3">
-            <p>
-              <input name="style" type="radio" id="test1" value="T-shirt" />
-              <label for="test1">T-shirt </label>
-              <input name="style" type="radio" id="test2" value="Long Sleeve"/>
-              <label for="test2">Long Sleeve</label>
-              <input name="style" type="radio" id="test3" value="Hoodie"/>
-              <label for="test3"> Hoodie </label>
-              <input name="style" type="radio" id="test4" value="Crew Neck" />
-              <label for="test4">Crew Neck </label>
-            </p>
-          </div>
-        </div>
-
-        <!-- SHIRT NAME 1 -->
-          <div class="row">
-            <div class="input-field col s4 offset-s4">
-              <span class="flow-text">
-                <input id="shirt" type="text" class="validate" name="shirt_name">
-                <label for="text">Shirt Title</label>
-              </span>
-            </div>
-          </div>
-
-          <!-- FRONT COLOR 1 -->
-            <div class="row">
-              <div class="input-field col s1 offset-s4">
-                  <select class="validate" name="front_color">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                <label for="password">Front Colors:</label>
-              </div>
-
-            <!-- BACK COLOR 1 -->
-              <div class="input-field col s1">
-                  <select class="validate" name="back_color">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                <label for="text">back Colors:</label>
-              </div>
-
-            <!-- SLEEVE COLOR 1 -->
+        <input id="first_name" name="email" value="Email" onfocus="if (this.value=='Email') this.value='';">
+      </span>
+    </div>
+<!-- SHIRT NAME 1 -->
+    <div class="input-field col s3 offset-s1">
+        <span class="flow-text">
+          <input id="shirt" type="text" value="shirt name" name="shirt_name" onfocus="if (this.value=='shirt_name') this.value='';">
+        </span>
+    </div>
+<!-- FRONT COLOR 1 -->
+    <div class="input-field col s1">
+      <select class="validate" name="front_color">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <label for="password">Front Colors:</label>
+    </div>
+<!-- BACK COLOR 1 -->
+    <div class="input-field col s1">
+      <select class="validate" name="back_color">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <label for="text">back Colors:</label>
+    </div>
+<!-- SLEEVE COLOR 1 -->
             <div class="input-field col s1">
               <select class="validate" name="sleeve_color">
                     <option value="0">0</option>
@@ -154,131 +91,133 @@
               </select>
               <label for="text">Sleve Prints:</label>
             </div>
-
-          <!-- Apparel Color 1 -->
-          <div class="row">
-            <div class="input-field col s4 offset-s4">
-              <span class="flow-text">
-                <input id="apparel_color" type="text" class="validate" name="app_color">
-                <label for="text">Apparel Color</label>
-              </span>
-            </div>
           </div>
+<!-- PHONE 1 -->
+  <div class="row">
+    <div class="input-field col s3 offset-s1">
+      <input id="last_name" type="tel" class="validate" name="phone" value="35235235" onfocus="if (this.value=='35235235') this.value='';">
+    </div>
 
-          <!-- QUANTITY 1-->
-          <div class="row">
-            <div class="input-field col s1 offset-s3">
-                  <select class="validate" name="quantity">
-                   <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                  <label for="password">Quantity</label>
-            </div>
-              <!-- SMALL 1 -->
-            <div class="input-field col s1 ">
-                  <select class="validate" name="sm">
-                   <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                  <label for="password">Small</label>
-            </div>
+    <div class="input-field col s1 offset-s1">
+      <select class="validate" name="quantity">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <label for="password">Quantity</label>
+    </div>
 
-            <!-- MED 1 -->
-            <div class="input-field col s1">
-              <select class="validate" name="md">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-              </select>
-              <label for="password">Medium</label>
-            </div>
+ <!-- SMALL 1 -->
+    <div class="input-field col s1 ">
+      <select class="validate" name="sm">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <label for="password">Small</label>
+    </div>
 
-            <!-- LG 1 -->
-            <div class="input-field col s1">
-              <select class="validate" name="lg">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-              </select>
-              <label for="password">Large</label>
-            </div>
+<!-- MED 1 -->
+    <div class="input-field col s1">
+      <select class="validate" name="md">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <label for="password">Medium</label>
+    </div>
+<!-- LG 1 -->
+    <div class="input-field col s1">
+      <select class="validate" name="lg">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <label for="password">Large</label>
+    </div>
 
-            <!-- XL 1 -->
-            <div class="input-field col s1">
-              <select class="validate" name="xl">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-              </select>
-              <label for="password">XL</label>
-            </div>
-
-            <!-- 2XL 1 -->
-            <div class="input-field col s1">
-              <select class="validate" name="twoxl">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-              </select>
-              <label for="password">2XL</label>
-            </div>
-
-            <!-- IMG_URL 1 -->
-            <div class="row">
-             <div class="file-field input-field col s4 offset-s4">
-              <div class="btn">
-                <span>File</span>
-
-                <input id="fill_button"name="img_url" type="file">
-              </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" type="text" name="img_url"value="">
-              </div>
-            </div>
-
-
-          <div class="row">
-             <div class="file-field input-field col s4 offset-s4">
-           <button id="more_button"> Add more shirts</button>
-           <button id="submit_button" type="submit"> submit</button>
-
-           </div>
-           </div>
-        </div>
-      </form>
+<!-- XL 1 -->
+  <div class="input-field col s1">
+    <select class="validate" name="xl">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <label for="password">XL</label>
   </div>
 
-<!--   <img src="images/dante.jpg" alt="Mountain View" id="bg">
- -->
-  <script src="script/jquery.js"></script>
-  <script type="text/javascript" src="script/materialize.js"></script>
-    <script src="script/script.js"></script>
+<!-- 2XL 1 -->
+  <div class="input-field col s1">
+    <select class="validate" name="twoxl">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <label for="password">2XL</label>
+  </div>
+</div>
+
+<!-- DUE DATE 1 -->
+<div class="row">
+  <div class="input-field col s3 offset-s1">
+    <input type="date" class="datepicker" name="due_date">
+    <label class="active" for="last_name"><span class="dueDateLeft">Due Date</span></label>
+  </div>
+  <div class="file-field input-field col s5 offset-s1">
+    <div class="btn">
+      <span>File</span>
+      <input id="fill_button"name="img_url" type="file" multiple>
+    </div>
+    <div class="file-path-wrapper">
+      <input class="file-path validate" type="text" name="img_url"value="image.jpg">
+      <label for="" data-error="wrong" data-success="right">file</label>
+    </div>
+   <!-- Apparel Color 1 -->
+<!--     <div class="input-field col s4 offset-s1">
+      <span class="flow-text">
+        <input id="apparel_color" type="text" class="validate" name="app_color">
+        <label for="text">Apparel Color</label>
+      </span>
+    </div> -->
+  </div>
+  </div>
+  <div class="row">
+      <!-- ADDRESS 1 -->
+    <div class="input-field col s4 offset-s1">
+      <div id="getaddress" class= onclick="getLocation()">
+        <img src="images/location.png" class="location" alt="location icon">
+      </div>
+      <input id="street" type="text" class="validate" name="address" value="Address">
+       <div class="input-field col s2 offset-s1">
+       <input type="email" name="_replyto">
+    </div>
+  </div>
+  <input type="submit" value="Send">
+</form>
 
 
-
-
-
-
-        </div>
         {{/logged_in}}
         {{^logged_in}}
         <div class="col-lg-6 center-block">
           <div class="well bs-component">
+          <br>
+          <br>
+          <br>
+            <div class="container">
             <form class="form-horizontal" action="/login" method="post">
+               <div class="z-depth-5 #ffffff white">
+               <h4 class="card-panel #ef5350 red lighten-1">Login</h4>
               <fieldset>
-                <legend>Login</legend>
                 <div class="form-group">
                   <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                   <div class="col-lg-10">
-                    <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Email">
+                    <input name="email" type="text" class="form-control" id="Email" placeholder="Email">
                   </div>
                 </div>
                 <div class="form-group">
@@ -290,16 +229,34 @@
                 <div class="form-group">
                   <div class="col-lg-10 col-lg-offset-2">
                     <button type="submit" class="btn btn-primary">Login</button>
+                    <p>Not a member? <a href="/signup">Sign Up!</a></p>
                   </div>
                 </div>
+
               </fieldset>
-            </form>
+
+
+           </div>
+
+          </form>
           </div>
-          <p>Not a member? <a href="/signup">Sign Up!</a></p>
-        </div>
+         </div>
         {{/logged_in}}
+
+
+
+
       </div>
     </div>
+
+
+
+  <script src="script/jquery.js"></script>
+  <script type="text/javascript" src="script/materialize.js"></script>
+    <script src="script/script.js"></script>
+
+
+
   </body>
 </html>
 

@@ -24,25 +24,33 @@ CREATE TABLE client (
   address VARCHAR(255)
 );
 
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(255) UNIQUE,
+  name VARCHAR(255),
+  phone_number(255),
+  password_digest VARCHAR(255)
+);
+
 CREATE TABLE orders(
   id serial PRIMARY KEY,
-  contact_name varchar(50),
+  contact_name varchar(255) FOREIGN KEY (contact_name) REFERENCES users(name),
   phone varchar(250),
   due_date varchar(250),
   ship varchar(250),
   address varchar(250),
   style varchar(250),
   shirt_name varchar(250),
-  front_color INT,
-  back_color INT,
-  sleeve_color INT,
+  front_color varchar(250),
+  back_color varchar(250),
+  sleeve_color varchar(250),
   app_color varchar(250),
-  quantity INT,
-  sm INT,
-  md INT,
-  lg INT,
-  xl INT,
-  twoxl INT,
+  quantity varchar(250),
+  sm varchar(250),
+  md varchar(250),
+  lg varchar(250),
+  xl varchar(250),
+  twoxl varchar(250),
   img_url varchar(250)
   );
 CREATE TABLE houses(
@@ -51,9 +59,4 @@ CREATE TABLE houses(
   img_url varchar(250)
   );
 
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  email VARCHAR(255) UNIQUE,
-  password_digest VARCHAR(255)
-);
 

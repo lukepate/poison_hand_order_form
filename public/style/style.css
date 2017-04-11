@@ -3,23 +3,24 @@ body {
   text-align: center;
   font-color: #7C2A30;
   background-color: #F5F5F5 ;
+
+  background-size: cover;
 }
 #bg{
 
-  opacity: .09;
   width: 100%;
   height: auto;
   background-repeat: no-repeat;
   background-size: cover;
   background background-attachment: fixed;
-  margin-top: -2500px;
   left: 0%;
   z-index: -1;
 }
-
-.dueDateLeft{
-  margin-left: 40px !important;
+.button{
+  background-color:#f44336;
+  color:#f44336 ;
 }
+
 #hide {
   display: none;
 }
@@ -34,3 +35,25 @@ body {
   width: 100%;
 }
 
+.nav-wrapper {
+  background-color: #ef5350;
+}
+.logo{
+  width: 50%;
+  height: auto;
+}
+#left{
+  position: absolute;
+  left: -5%;
+  width: 30%;
+}
+#moveleft{
+  margin-left: -220px;
+}
+.location{
+  width: 5%;
+}
+#getaddress{
+  margin-left: -300px;
+  margin-bottom: -21px;
+}

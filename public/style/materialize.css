@@ -1011,11 +1011,11 @@
 }
 
 .teal.lighten-2 {
-  background-color: #4db6ac !important;
+  background-color: #f44336 !important;
 }
 
 .teal-text.text-lighten-2 {
-  color: #4db6ac !important;
+  color: #f44336 !important;
 }
 
 .teal.lighten-1 {
@@ -4181,7 +4181,7 @@ nav .brand-logo {
 }
 
 nav .brand-logo.center {
-  left: 50%;
+  left: 0%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
 }
