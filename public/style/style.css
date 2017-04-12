@@ -1,9 +1,7 @@
 body {
-  font-family: Ablefont, Irish Grover;
   text-align: center;
   font-color: #7C2A30;
   background-color: #F5F5F5 ;
-
   background-size: cover;
 }
 #bg{
@@ -19,6 +17,14 @@ body {
 .button{
   background-color:#f44336;
   color:#f44336 ;
+}
+h4{
+  font-family: "Seven Monkey Fury";
+}
+h6{
+  font-family: "Seven Monkey Fury";
+  text-align: center;
+  font-weight: 800;
 }
 
 #hide {
@@ -39,9 +45,14 @@ body {
   background-color: #ef5350;
 }
 .logo{
+  display: none;
   width: 50%;
   height: auto;
 }
+#container{
+  display: none;
+}
+
 #left{
   position: absolute;
   left: -5%;
@@ -50,10 +61,36 @@ body {
 #moveleft{
   margin-left: -220px;
 }
+.movedown{
+  margin-top: 23px;
+}
 .location{
   width: 5%;
 }
 #getaddress{
-  margin-left: -300px;
-  margin-bottom: -21px;
+  position: absolute;
+  margin-left: -220px;
+  top: -15px;
+
+  width: 180%;
+}
+#form{
+  border-radius: 2%
+}
+@font-face {
+  font-family: "Seven Monkey Fury";
+  src: url(/style/SEVEMFBR.TTF);
+  font-weight: bold;
+}
+.stock{
+  display: none;
+}
+.shirt{
+  display: none;
+}
+.graphic{
+  display: none;
+}
+.instructions{
+  display: none;
 }

@@ -27,14 +27,13 @@ CREATE TABLE client (
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   email VARCHAR(255) UNIQUE,
-  name VARCHAR(255),
-  phone_number(255),
+  name VARCHAR(255) UNIQUE,
   password_digest VARCHAR(255)
 );
 
 CREATE TABLE orders(
   id serial PRIMARY KEY,
-  contact_name varchar(255) FOREIGN KEY (contact_name) REFERENCES users(name),
+  contact_name varchar(255),
   phone varchar(250),
   due_date varchar(250),
   ship varchar(250),

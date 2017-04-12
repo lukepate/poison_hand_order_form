@@ -3,107 +3,196 @@
   <head>
   <link rel="stylesheet" type="text/css" href="style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+  <link rel="stylesheet" href="style/magic.css">
   <script src="https://www.google.com/jsapi?key=AIzaSyAagP8OMcTFjv1Fiz08bfMmL0SirqzMx7E" type="text/javascript"></script>
 </head>
 
   <body background="images/dante.jpg">
     {{#logged_in}}
     <nav>
-    <div class="nav-wrapper">
-      <a href="#" id="left"><img src="images/logo.png" class="logo" alt=""></a>
+    <div class="nav-wrapper z-depth-4">
+      <a href="#" id="left"><img id="logo" src="images/logo.png" class="logo" alt=""></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/">Home</a></li>
-           <li><a href="/update/1">Update</a></li>
-        <li><a href="collapsible.html">Contact</a></li>
-        <li><a href="/logout">Logout!</a></li>
+        <li><a href="/"><h6 class="movedown">Home</h6></a></li>
+        <li><a href="/update/1"><h6 class="movedown">Update</h6></a></li>
+        <li><a href="/logout"><h6 class="movedown">Logout</h6></a></li>
       </ul>
     </div>
   </nav>
 <br>
 <br>
 <br>
- <div class="container">
-        <div class="z-depth-5 #ffffff white">
-         <h4 class="card-panel #ef5350 red lighten-1">Submit an Order</h4>
 
- <form action="https://formspree.io/lukewpate@gmail.com" method="POST">
+
+ <div id="hideMe" class="container">
+  <div id="form" class="z-depth-5 #ffffff white">
+    <h4 id="form" class="card-panel #ef5350 red lighten-1 white-text">Welcome</h4>
+
+  <br>
+    <div class="row">
+      <div class="col s4">
+        <h3>Apparel Printing</h3>
+          <h5 class="red-text">Hundreds of options</h5>
+          <br>
+          <img src="/images/shirt.png" class="shirt" alt="">
+<p>We specialize in apparel printing of all types. Sleeves, pockets, tags, you name it we can probably get it done for you. If you want specialty inks like metallic, glow in the dark, discharge. Just let us know and we can let you know our available options.</p>
+
+      </div>
+      <div class="col s4">
+       <h3>Stock Printing</h3>
+       <h5 class="red-text">Events, Clubs, Fundraising</h5>
+       <br>
+       <img src="/images/stock.png" class="stock" alt="">
+  <p>We proudly use Mr. French papers for most of our printing needs. If you need art or show posters we can do it. We also can do super fancy wedding invites and cool art projects. Let us know if you have any fun creative projects coming up and we can get you a quote.</p>
+
+      </div>
+      <div class="col s4">
+    <h3>Graphic Design</h3>
+    <h5 class="red-text">Web and Mobile</h5>
+    <br>
+      <img src="/images/design.png" class="graphic" alt="">
+    <p>With multiple decades of experience we can design anything from a website, to record covers. Corporate ID or cool art projects or anything else under the sun.</p>
+
+    </div>
+  </div>
+
+
+If we can’t print it here, we can help you find a place to get what you need. In house we can print any flat item that needs a logo or anything for that special event.
+
+Order Fulfillment
+
+Already have a web store or apparel line and need a printer for your items. Look no further we can even ship them directly to your customer.
+<br>
+<br>
+      <div class="row">
+      <div class="col s6 s3 offset-s3">
+      <button id="clickMe" class="btn waves-effect waves-light #e53935 red darken-1"><h6>Place an Order</h6></button>
+      </div>
+    </div>
+<br>
+<br>
+  </div>
+</div>
+
+
+
+ <div id="container" class="container">
+    <div id="form" class="z-depth-5 #ffffff white">
+      <h4 id="form" class="card-panel #ef5350 red lighten-1 white-text">Submit an Order</h4>
+
+ <form action="https://formspree.io/lukewpate@gmail.com" method="POST" style="background-color; grey;">
+
+
   <!-- CONTACT_NAME 1 -->
     <div class="row">
-      <div class="input-field col s3 offset-s1">
-        <span class="flow-text">
-          <input id="first_name" type="text" name="contact_name" value="Name: name" onfocus="if (this.value=='name') this.value='';">
+    <div class="instructions"></div>
+      <div class="input-field col s3 offset-s3">
+        <span class="flow-text ">
+          <input class="form-control"  id="first_name" type="text" name="contact_name" placeholder="Name">
+          <input type="hidden" name="_next" value="/confirm" />
         </span>
       </div>
+        <!-- EMAIL_NAME 1 -->
+         <div class="input-field col s3">
+            <span class="flow-text">
+        <input id="email_address" name="_replyto"" placeholder="Email Address" onfocus="if (this.placeholder=='Email') this.placeholder='';">
+      </span>
+      </div>
+    </div>
+
+ <!-- PHONE 1 -->
+  <div class="row">
+    <div class="input-field col s3 offset-s3">
+      <input id="phone" type="tel" class="validate" name="phone" placeholder="Phone" onfocus="if (this.placeholder=='35235235') this.placeholder='';">
+    </div>
+
+    <div class="input-field col s3">
+      <div id="getaddress" class= onclick="getLocation()">
+        <img src="images/location.png" class="location" alt="location icon">
+      </div>
+      <input id="street" type="text" class="validate" name="address" placeholder="Address">
+       <div class="input-field col s2 offset-s1">
+    </div>
+  </div>
+    </div>
   <!-- SHIRT STYLE 1 -->
-      <div class="input-field col s5 offset-s1">
+  <div class="row">
+    <div class="input-field col s2 offset-s3">
+    <input id="date" type="date" class="datepicker" name="due_date">
+    <label class="active" for="last_name"><span class="dueDateLeft">Due Date</span></label>
+  </div>
+      <div class="input-field col s5">
         <p>
-          <input name="style" type="radio" id="test1" value="T-shirt" />
+          <input name="style" type="radio" id="test1" placeholder="T-shirt" />
           <label for="test1">T-shirt </label>
-          <input name="style" type="radio" id="test2" value="Long Sleeve"/>
+          <input name="style" type="radio" id="test2" placeholder="Long Sleeve"/>
           <label for="test2">Long Sleeve</label>
-          <input name="style" type="radio" id="test3" value="Hoodie"/>
+          <input name="style" type="radio" id="test3" placeholder="Hoodie"/>
           <label for="test3"> Hoodie </label>
-          <input name="style" type="radio" id="test4" value="Crew Neck" />
+          <input name="style" type="radio" id="test4" placeholder="Crew Neck" />
           <label for="test4">Crew Neck </label>
         </p>
       </div>
     </div>
-  <!-- EMAIL 1 -->
-  <div class="row">
-    <div class="input-field col s3 offset-s1">
-      <span class="flow-text">
-
-        <input id="first_name" name="email" value="Email" onfocus="if (this.value=='Email') this.value='';">
-      </span>
-    </div>
+<br>
 <!-- SHIRT NAME 1 -->
-    <div class="input-field col s3 offset-s1">
+  <div class="row">
+    <div class="input-field col s3 offset-s3">
         <span class="flow-text">
-          <input id="shirt" type="text" value="shirt name" name="shirt_name" onfocus="if (this.value=='shirt_name') this.value='';">
+          <input id="shirt" type="text" placeholder="Shirt Color" name="shirt_name" onfocus="if (this.placeholder=='shirt_name') this.placeholder='';">
         </span>
     </div>
 <!-- FRONT COLOR 1 -->
     <div class="input-field col s1">
       <select class="validate" name="front_color">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
+        <option placeholder="1">1</option>
+        <option placeholder="2">2</option>
+        <option placeholder="3">3</option>
       </select>
       <label for="password">Front Colors:</label>
     </div>
 <!-- BACK COLOR 1 -->
     <div class="input-field col s1">
       <select class="validate" name="back_color">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
+        <option placeholder="0">0</option>
+        <option placeholder="1">1</option>
+        <option placeholder="2">2</option>
+        <option placeholder="3">3</option>
       </select>
       <label for="text">back Colors:</label>
     </div>
 <!-- SLEEVE COLOR 1 -->
             <div class="input-field col s1">
               <select class="validate" name="sleeve_color">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
+                    <option placeholder="0">0</option>
+                    <option placeholder="1">1</option>
+                    <option placeholder="2">2</option>
+                    <option placeholder="3">3</option>
               </select>
               <label for="text">Sleve Prints:</label>
             </div>
           </div>
+
 <!-- PHONE 1 -->
   <div class="row">
-    <div class="input-field col s3 offset-s1">
-      <input id="last_name" type="tel" class="validate" name="phone" value="35235235" onfocus="if (this.value=='35235235') this.value='';">
-    </div>
-
-    <div class="input-field col s1 offset-s1">
+    <div class="input-field col s1 offset-s3">
       <select class="validate" name="quantity">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
+        <option placeholder="25">25</option>
+        <option placeholder="26">26</option>
+        <option placeholder="27">27</option>
+        <option placeholder="28">28</option>
+        <option placeholder="29">29</option>
+        <option placeholder="30">30</option>
+        <option placeholder="31">31</option>
+        <option placeholder="32">32</option>
+        <option placeholder="33">33</option>
+        <option placeholder="34">34</option>
+        <option placeholder="35">35</option>
+        <option placeholder="36">36</option>
+        <option placeholder="37">37</option>
+        <option placeholder="38">38</option>
+        <option placeholder="39">39</option>
+        <option placeholder="40">40</option>
       </select>
       <label for="password">Quantity</label>
     </div>
@@ -111,10 +200,10 @@
  <!-- SMALL 1 -->
     <div class="input-field col s1 ">
       <select class="validate" name="sm">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
+        <option placeholder="0">0</option>
+        <option placeholder="1">1</option>
+        <option placeholder="2">2</option>
+        <option placeholder="3">3</option>
       </select>
       <label for="password">Small</label>
     </div>
@@ -122,20 +211,20 @@
 <!-- MED 1 -->
     <div class="input-field col s1">
       <select class="validate" name="md">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
+        <option placeholder="0">0</option>
+        <option placeholder="1">1</option>
+        <option placeholder="2">2</option>
+        <option placeholder="3">3</option>
       </select>
       <label for="password">Medium</label>
     </div>
 <!-- LG 1 -->
     <div class="input-field col s1">
       <select class="validate" name="lg">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
+        <option placeholder="0">0</option>
+        <option placeholder="1">1</option>
+        <option placeholder="2">2</option>
+        <option placeholder="3">3</option>
       </select>
       <label for="password">Large</label>
     </div>
@@ -143,10 +232,10 @@
 <!-- XL 1 -->
   <div class="input-field col s1">
     <select class="validate" name="xl">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
+        <option placeholder="0">0</option>
+        <option placeholder="1">1</option>
+        <option placeholder="2">2</option>
+        <option placeholder="3">3</option>
     </select>
     <label for="password">XL</label>
   </div>
@@ -154,10 +243,10 @@
 <!-- 2XL 1 -->
   <div class="input-field col s1">
     <select class="validate" name="twoxl">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
+        <option placeholder="0">0</option>
+        <option placeholder="1">1</option>
+        <option placeholder="2">2</option>
+        <option placeholder="3">3</option>
     </select>
     <label for="password">2XL</label>
   </div>
@@ -165,18 +254,15 @@
 
 <!-- DUE DATE 1 -->
 <div class="row">
-  <div class="input-field col s3 offset-s1">
-    <input type="date" class="datepicker" name="due_date">
-    <label class="active" for="last_name"><span class="dueDateLeft">Due Date</span></label>
-  </div>
-  <div class="file-field input-field col s5 offset-s1">
-    <div class="btn">
-      <span>File</span>
-      <input id="fill_button"name="img_url" type="file" multiple>
+
+  <div class="file-field input-field col s5 offset-s3 black-text">
+    <div class="btn #f44336 red">
+      <span><h6 class="black-text white-text">File</h6></span>
+      <input id="file_place" id="fill_button"name="img_url" type="file" multiple>
     </div>
     <div class="file-path-wrapper">
-      <input class="file-path validate" type="text" name="img_url"value="image.jpg">
-      <label for="" data-error="wrong" data-success="right">file</label>
+      <input id="file_place" class="file-path validate" type="text" name="img_url"placeholder="image.jpg">
+      <label for="" data-error="wrong" data-success="right"></label>
     </div>
    <!-- Apparel Color 1 -->
 <!--     <div class="input-field col s4 offset-s1">
@@ -188,19 +274,10 @@
   </div>
   </div>
   <div class="row">
-      <!-- ADDRESS 1 -->
-    <div class="input-field col s4 offset-s1">
-      <div id="getaddress" class= onclick="getLocation()">
-        <img src="images/location.png" class="location" alt="location icon">
-      </div>
-      <input id="street" type="text" class="validate" name="address" value="Address">
-       <div class="input-field col s2 offset-s1">
-       <input type="email" name="_replyto">
-    </div>
-  </div>
-  <input type="submit" value="Send">
+  <button type="submit" class="btn waves-effect waves-light #e53935 red darken-1"placeholder="Send"><h6 class="white-text">Send Order</h6></button>
+  <br>
+  <br>
 </form>
-
 
         {{/logged_in}}
         {{^logged_in}}
@@ -212,23 +289,23 @@
             <div class="container">
             <form class="form-horizontal" action="/login" method="post">
                <div class="z-depth-5 #ffffff white">
-               <h4 class="card-panel #ef5350 red lighten-1">Login</h4>
+               <h4 class="card-panel #ef5350 red lighten-1 white-text">Login</h4>
+               <br>
               <fieldset>
+              <br>
                 <div class="form-group">
-                  <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                   <div class="col-lg-10">
                     <input name="email" type="text" class="form-control" id="Email" placeholder="Email">
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                   <div class="col-lg-10">
                     <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="col-lg-10 col-lg-offset-2">
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary #e53935 red darken-1"><h6 class="white-text">Login</h6></button>
                     <p>Not a member? <a href="/signup">Sign Up!</a></p>
                   </div>
                 </div>

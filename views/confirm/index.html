@@ -1,111 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title></title>
+  <head>
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+  <link rel="stylesheet" href="yourpath/magic.css">
+  <script src="https://www.google.com/jsapi?key=AIzaSyAagP8OMcTFjv1Fiz08bfMmL0SirqzMx7E" type="text/javascript"></script>
 </head>
-<link rel="stylesheet" type="text/css" href="style/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
-<script src="https://www.google.com/jsapi?key=AIzaSyAagP8OMcTFjv1Fiz08bfMmL0SirqzMx7E" type="text/javascript"></script>
-<body>
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Logo</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
-         <li><a href="/logout">Logout!</a></li>
-        </ul>
-      </div>
-    </nav>
+
+  <body background="images/dante.jpg">
+
+<nav>
+
+    <div class="nav-wrapper z-depth-4 #ef5350 red lighten-1">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/"><h6 class="movedown">Home</h6></a></li>
+        <li><a href="/update/1"><h6 class="movedown">Update</h6></a></li>
+        <li><a href="/logout"><h6 class="movedown">Logout</h6></a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
 
  <div class="container">
-  <h1>Confirm an Order</h1>
+  <h1>Update Info </h1>
   <div id="b"></div>
 {{#users}}
 <form action="/users/update/{{id}}?_method=PUT" method='post'>
-{{name}}
-    <input type="text" name="name" value="name">
+    <input type="text" name="name" value="{{name}}">
+    <input type="text" name="email" value="{{email}}">
+    <input type="text" name="password" placeholder="New Password">
+
 {{/users}}
-   <button class="#ffebee red lighten-5" type="submit"> submit</button>
-
+   <button class="btn waves-effect waves-light #e53935 red darken-1" type="submit"> submit</button>
 </form>
 
+<br>
+<br>
 
-
-
-
-
-
-
-<!--
-    <input type="hidden" name="_next" value="http://localhost:3000"/>
-    <input type="text" name="_gotcha" style="display:none" />
-    <input type="hidden" name="_subject" value="New Order!" />
-    <input type="hidden" name="_format" value="plain" />
-    <input id="nameN" type="text" name="name" value="Name: {{contact_name}}">
-    <input type="text" name="phone" value="Phone: {{phone}}">
-    <input type="text" name="due_date" value="Due Date: {{due_date}}">
-    <input type="text" name="ship" value="Pick-up/Ship: {{ship}}">
-    <input type="text" name="email" value="email: {{email}}">
-    <input type="text" name="address" value="email: {{address}}">
-
-
-<input type="email" name="_replyto" value="{{email}}">
-
-
-Contact Name: {{contact_name}}<br>
-Phone: {{phone}}<br>
-Due date: {{due_date}}<br>
-Shipping:  {{ship}}<br>
-Address: {{address}}<br>
-Shirt Style{{style}}<br>
-Shirt Name: {{shirt_name}}<br>
-Front Color: {{front_color}}<br>
-Back Color: {{back_color}}<br>
-Sleeve Color: {{sleeve_color}}<br>
-Apparel Color: {{app_color}}<br>
-Quantity: {{quantity}}<br>
-Small: {{sm}}<br>
-Med: {{md}}<br>
-Large: {{lg}}<br>
-XL: {{xl}}<br>
-2XL: {{twoxl}}<br>
-Img Url: {{img_url}}<br>
-
-
-    <input type="text" name="contact_name" value="contact">
-    <input type="text" name="phone" value="phone">
-    <input type="text" name="due_date" value="due_date">
-    <input type="text" name="ship" value="ship">
-    <input type="text" name="address" value="address">
-    <input type="text" name="style" value="style">
-    <input type="text" name="shirt_name" value="shirt_name">
-    <input type="text" name="front_color" value="front_color">
-    <input type="text" name="back_color" value="back_color">
-    <input type="text" name="sleeve_color" value="sleeve_color">
-    <input type="text" name="app_color" value="app_color">
-    <input type="text" name="quantity" value="quantity">
-    <input type="text" name="sm" value="sm">
-    <input type="text" name="md" value="md">
-    <input type="text" name="lg" value="lg">
-    <input type="text" name="xl" value="xl">
-    <input type="text" name="twoxl" value="twoxl">
-    <input type="text" name="img_url" value="img_url">
-   <button type="submit"> submit</button>
-</form>
-
- -->
 {{#users}}
 <form action='/users/delete/{{id}}?_method=DELETE' method='post'>
 
-   <input type="text" name="style" value="style">
-   <button type="submit"> Delete</button>
+   <input type="text" name="name" value="{{email}}">
+   <button type="submit" class="btn waves-effect waves-light #e53935 red darken-1"> Delete</button>
 {{/users}}
 </form>
-
-
-
 
 </div>
  <script src="script/jquery.js"></script>

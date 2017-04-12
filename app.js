@@ -8,6 +8,7 @@ var multer  = require('multer')
 var upload = multer({ dest: 'public/uploads/' })
 var methodOverride = require('method-override')
 const nodemailer = require('nodemailer');
+var twilio = require('twilio');
 
 const bcrypt = require('bcrypt');
 const salt = bcrypt.genSalt(10);
@@ -20,6 +21,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride('_method'))
 
+var client = twilio('', '');
+// var $phone = $('#phone');
+// let clientNum = $Phone.val()
+client.sendMessage({
+  to: '',
+  from: '',
+  body: 'Hello! Thanks for ordering',
+});
+
+
 app.use(session({
   secret: 'SHOEBILLZ',
   resave: false,
@@ -28,6 +39,7 @@ app.use(session({
 }))
 
 let db = pgp('postgres://Lukepate@localhost:5432/db');
+
 app.listen(3000, function(){
   console.log("server is listening")
 })
@@ -96,24 +108,31 @@ app.post("/", upload.single('img_url'), function(req, res){
 })
 
 app.get("/update/:id", function(req, res){
-   let id = req.params.id
+
+  if(req.session.user){
+    let id = req.session.user.id
+
    db
     .any("SELECT * FROM users WHERE id = $1", id)
     .then(function(data){
       console.log(data)
       let view_data = {
         users:data
-      };
-      res.render("confirm/index", view_data);
-    })
+      }
+      res.render('confirm/index', view_data);
+      })
+    } else {
+    res.redirect('/');
+    }
+
   });
 
 app.put("/users/update/:id", function (req, res) {
   console.log(req.body.email)
    db
-   .none("UPDATE users SET name = $1 WHERE id = $2", [req.body.name, req.params.id])
+   .none("UPDATE users SET name = $1, email = $2 WHERE id = $3 ", [req.body.name, req.body.email, req.session.user.id])
    .then(function() {
-      res.redirect("/update/"+req.params.id)
+      res.redirect("/update/"+req.session.user.id)
 
     })
  })
@@ -124,8 +143,7 @@ app.delete("/users/delete/:id", function (req, res) {
    db
    .none("DELETE FROM users WHERE id = $1", [id])
    .then(function() {
-      res.redirect("/"+req.params.id)
-
+      res.redirect("/")
     })
  })
 app.post('/login', function(req, res){
@@ -158,7 +176,7 @@ app.post('/signup', function(req, res){
         "INSERT INTO users (email, name, password_digest) VALUES ($1, $2, $3)",
         [data.email, data.name, hash]
       ).then(function(){
-         res.redirect("/");
+        res.redirect("/");
       })
     })
 });
@@ -169,3 +187,9 @@ app.get('/logout', function(req, res){
   req.session.user = false;
   res.redirect("/")
 });
+
+app.get('/confirm', function(req, res){
+  res.render('home/index')
+});
+
+
