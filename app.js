@@ -8,7 +8,7 @@ var multer  = require('multer')
 var upload = multer({ dest: 'public/uploads/' })
 var methodOverride = require('method-override')
 const nodemailer = require('nodemailer');
-var twilio = require('twilio');
+// var twilio = require('twilio');
 
 const bcrypt = require('bcrypt');
 const salt = bcrypt.genSalt(10);
@@ -20,15 +20,15 @@ app.use("/", express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride('_method'))
-
-var client = twilio('', '');
-// var $phone = $('#phone');
-// let clientNum = $Phone.val()
-client.sendMessage({
-  to: '',
-  from: '',
-  body: 'Hello! Thanks for ordering',
-});
+//
+// var client = twilio('', '');
+// // var $phone = $('#phone');
+// // let clientNum = $Phone.val()
+// client.sendMessage({
+//   to: '',
+//   from: '',
+//   body: 'Hello! Thanks for ordering',
+// });
 
 
 app.use(session({
@@ -191,5 +191,3 @@ app.get('/logout', function(req, res){
 app.get('/confirm', function(req, res){
   res.render('home/index')
 });
-
-
