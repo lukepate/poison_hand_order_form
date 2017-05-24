@@ -188,6 +188,6 @@ app.get('/confirm', function(req, res){
   res.render('home/index')
 });
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.DATABASE_URL || 3000, function(){
   console.log("server is listening")
 });
