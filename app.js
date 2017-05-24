@@ -37,7 +37,7 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: false }
 }))
-var pg = require('pg');
+var pg = require('postgres://akcxqvkwgkyxws:60cb3e5f26345b76bfaae4c5e96e42a14f2ab654f9fc973eac71d26f0f8c7636@ec2-107-21-108-204.compute-1.amazonaws.com:5432/d6c2tib3sf9u4f');
 
 pg.defaults.ssl = true;
 pg.connect(process.env.DATABASE_URL, function(err, client) {
@@ -200,6 +200,6 @@ app.get('/confirm', function(req, res){
   res.render('home/indegx')
 });
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.pg || 3000, function(){
   console.log("server is listening")
 });
