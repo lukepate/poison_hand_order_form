@@ -185,9 +185,9 @@ app.get('/logout', function(req, res){
 });
 
 app.get('/confirm', function(req, res){
-  res.render('home/index')
+  res.render('home/indegx')
 });
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.5432 || 3000, function(){
   console.log("server is listening")
 });
