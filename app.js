@@ -37,10 +37,9 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: false }
 }))
-var pg = require('postgres://akcxqvkwgkyxws:60cb3e5f26345b76bfaae4c5e96e42a14f2ab654f9fc973eac71d26f0f8c7636@ec2-107-21-108-204.compute-1.amazonaws.com:5432/d6c2tib3sf9u4f');
-
-// let db = pgp('postgres://Lukepate@localhost:5432/db');
-let db = pgp('postgres://snsjmqbeiwopcf:fdbc6c743f0a1e45bd4ce7d484f3425201e75acdd18fab94363cee87e1c6aa69@ec2-54-197-232-155.compute-1.amazonaws.com:5432/dapn97q4qo8n25');
+// var pg = require('pg');
+let db = pgp('postgres://Lukepate@localhost:5432/db');
+// let db = pgp('postgres://snsjmqbeiwopcf:fdbc6c743f0a1e45bd4ce7d484f3425201e75acdd18fab94363cee87e1c6aa69@ec2-54-197-232-155.compute-1.amazonaws.com:5432/dapn97q4qo8n25');
 
 app.get('/signup', function(req, res){
   res.render('signup/index')
@@ -186,9 +185,9 @@ app.get('/logout', function(req, res){
 });
 
 app.get('/confirm', function(req, res){
-  res.render('home/indegx')
+  res.render('home/index')
 });
 
-app.listen(process.env.db || 3000, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("server is listening")
 });
