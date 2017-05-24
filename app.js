@@ -200,6 +200,6 @@ app.get('/confirm', function(req, res){
   res.render('home/indegx')
 });
 
-app.listen(process.env.pg || 3000, function(){
+app.listen(process.env.db || 3000, function(){
   console.log("server is listening")
 });
