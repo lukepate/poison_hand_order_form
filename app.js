@@ -40,7 +40,7 @@ app.use(session({
 
 let db = pgp('postgres://Lukepate@localhost:5432/db');
 
-app.listen(3000, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("server is listening")
 })
 
