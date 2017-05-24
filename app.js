@@ -42,11 +42,6 @@ app.use(session({
 let db = pgp('postgres://snsjmqbeiwopcf:fdbc6c743f0a1e45bd4ce7d484f3425201e75acdd18fab94363cee87e1c6aa69@ec2-54-197-232-155.compute-1.amazonaws.com:5432/dapn97q4qo8n25
 ');
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("server is listening")
-})
-
-
 app.get('/signup', function(req, res){
   res.render('signup/index')
 });
@@ -192,4 +187,8 @@ app.get('/logout', function(req, res){
 
 app.get('/confirm', function(req, res){
   res.render('home/index')
+});
+
+app.listen(process.env.PORT || 3000, function(){
+  console.log("server is listening")
 });
