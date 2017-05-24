@@ -38,7 +38,9 @@ app.use(session({
   cookie: { secure: false }
 }))
 
-let db = pgp('postgres://Lukepate@localhost:5432/db');
+// let db = pgp('postgres://Lukepate@localhost:5432/db');
+let db = pgp('postgres://snsjmqbeiwopcf:fdbc6c743f0a1e45bd4ce7d484f3425201e75acdd18fab94363cee87e1c6aa69@ec2-54-197-232-155.compute-1.amazonaws.com:5432/dapn97q4qo8n25
+');
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("server is listening")
