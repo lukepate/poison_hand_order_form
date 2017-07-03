@@ -5,7 +5,7 @@ Poison Hand Merchandise is a Node/Express app for submiting merchandise orders e
 1. Fork and clone <br>
 2. Install dependencies by using the command line to run: <code>npm install</code>
 
-<h2 Using </h2>
+<h2> Using </h2>
 
 Login and select place order 
 
@@ -40,6 +40,7 @@ Check for email response with quotes.
 <li>"nodemailer": "^4.0.0"</li>
 <li>"pg-promise": "^5.6.4"</li>
 <li>"twilio": "^2.11.1"</li>
-<li>"forspree": "^1.3.0"</li>
+<li>Formspree</li>
+
 </ul>
 
