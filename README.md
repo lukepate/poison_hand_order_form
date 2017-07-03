@@ -2,7 +2,7 @@ Poison Hand Merchandise is an online t-shirt ordering system for artist to place
 
 <h2> Getting Started </h2>
 1. Fork and clone <br>
-2. run: npm isntall
+2. run: <code>npm install</code>
 
 <h2 Using </h2>
 
