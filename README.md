@@ -2,7 +2,7 @@ Poison Hand Merchandise is an online t-shirt ordering system for artist to place
 
 <h2> Getting Started </h2>
 1. Fork and clone <br>
-2. run: <code>npm install</code>
+2. Install dependencies by using the command line to run: <code>npm install</code>
 
 <h2 Using </h2>
 
@@ -10,9 +10,15 @@ Login and select place order
 
 <img src="http://i.imgur.com/h8Ys3ef.png">
 
+Complete form with order information and submit order
+
 <img src="http://i.imgur.com/JmYRFdo.png">
 
-<img src="http://i.imgur.com/EkNDUmB.png">
+Confirm order and email
+
+<img src="http://i.imgur.com/qH4qVPv.png">
+
+Check for email response with quotes. 
 
 <img src="http://i.imgur.com/UaoZDtJ.png">
 
