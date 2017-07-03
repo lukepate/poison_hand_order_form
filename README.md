@@ -14,17 +14,17 @@ Login and select place order
 Complete form with order information and submit order
 
 <img src="http://i.imgur.com/JmYRFdo.png">
-
+<br>
 
 Confirm order and email
 
 <img src="http://i.imgur.com/qH4qVPv.png">
-
+<br>
 
 Check for email response with quotes. 
 
 <img src="http://i.imgur.com/UaoZDtJ.png">
-
+<br>
 
 
     "bcrypt": "^1.0.2",
