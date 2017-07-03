@@ -1,11 +1,15 @@
-# u02_Project_Two
+Poison Hand Merchandise is an online t-shirt ordering system for artist to place merchadise orders online effortlessly.   
 
-Project #2: Poison Hand - My First Full-stack Application
+<h2> Getting Started </h2>
+1. Fork and clone 
+2. run: npm isntall
 
-Overview
+<h2 Using </h2>
 
-For my second project I wanted to build an online t-shirt ordering system for artist I worked with. My first approach was to create a database to store the orders and the users sign-up info and then email myself the orders placed from their profile. 
-The technologies I used and and instructions: 
+Login and select place order 
+<img src="http://i.imgur.com/h8Ys3ef.png">
+
+
 
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.1",
