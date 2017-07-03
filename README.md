@@ -1,7 +1,7 @@
 Poison Hand Merchandise is an online t-shirt ordering system for artist to place merchadise orders online effortlessly.   
 
 <h2> Getting Started </h2>
-1. Fork and clone 
+1. Fork and clone <br>
 2. run: npm isntall
 
 <h2 Using </h2>
