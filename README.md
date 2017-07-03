@@ -10,13 +10,16 @@ Login and select place order
 
 <img src="http://i.imgur.com/h8Ys3ef.png">
 
+
 Complete form with order information and submit order
 
 <img src="http://i.imgur.com/JmYRFdo.png">
 
+
 Confirm order and email
 
 <img src="http://i.imgur.com/qH4qVPv.png">
+
 
 Check for email response with quotes. 
 
