@@ -1,4 +1,5 @@
-Poison Hand Merchandise is an online t-shirt ordering system for artist to place merchadise orders online effortlessly.   
+Poison Hand Merchandise is a Node/Express app for submiting merchandise orders effortlessly. The site uses Formspree to confirm email addresses, Google maps for physical addresses and Twilio for order conforimations. 
+   
 
 <h2> Getting Started </h2>
 1. Fork and clone <br>
