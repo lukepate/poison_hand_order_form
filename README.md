@@ -9,6 +9,12 @@ Poison Hand Merchandise is an online t-shirt ordering system for artist to place
 Login and select place order 
 <img src="http://i.imgur.com/h8Ys3ef.png">
 
+<img src="http://i.imgur.com/EnBLMlY.png">
+
+<img src="http://i.imgur.com/EkNDUmB.png">
+
+<img src="http://i.imgur.com/UaoZDtJ.png">
+
 
 
     "bcrypt": "^1.0.2",
