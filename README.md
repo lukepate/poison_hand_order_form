@@ -1,4 +1,4 @@
-Poison Hand Merchandise is a Node/Express app for submiting merchandise orders effortlessly. The site uses Formspree to confirm email addresses, Google maps for physical addresses and Twilio for order conforimations. 
+Poison Hand Merchandise is a Node/Express app for submitting merchandise orders effortlessly. The site uses Formspree to confirm email addresses, Google maps for physical addresses and Twilio for order conforimations. 
    
 
 <h2> Getting Started </h2>
